@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 
 const Header = () => {
   return (
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 0,
     paddingBottom: 10,
-    backgroundColor: '#FFF',
+    backgroundColor: Platform.OS === 'web' ? 'transparent' : '#FFF',
   },
   text: {
     fontSize: 32,

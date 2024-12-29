@@ -1,5 +1,5 @@
 import React, { useMemo, useCallback } from 'react';
-import { FlatList, StyleSheet, useWindowDimensions, View } from 'react-native';
+import { FlatList, Platform, StyleSheet, useWindowDimensions, View } from 'react-native';
 
 import Header from '../Header';
 import ListFooterComponent from './ListFooterComponent';
@@ -57,9 +57,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
+    alignItems: 'center',
   },
   listContainer: {
-    paddingTop: 20,
+    paddingTop: Platform.OS === 'web' ? 80 : 20,
     paddingHorizontal: 0,
   },
   item: {
