@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { YouTubeResponse } from '../types/youtube';
 
-const API_KEY = process.env.EXPO_PUBLIC_YOUTUBE_API_KEY as string;
+const API_KEY = process.env.EXPO_PUBLIC_YOUTUBE_API_KEY;
 const BASE_URL = process.env.EXPO_PUBLIC_YOUTUBE_BASE_URL ?? '';
 
 export const fetchVideos = async (
