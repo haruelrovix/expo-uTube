@@ -1,6 +1,9 @@
 {
   "name": "utube",
   "version": "1.0.0",
+  "description": "MightyByte Frontend React/React Native Challenge",
+  "author": "Havit C. Rovik",
+  "license": "MIT",
   "main": "index.ts",
   "scripts": {
     "start": "expo start",
@@ -25,6 +28,5 @@
     "@babel/core": "^7.25.2",
     "@types/react": "~18.3.12",
     "typescript": "^5.3.3"
-  },
-  "private": true
+  }
 }
