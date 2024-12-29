@@ -6,7 +6,7 @@ const BASE_URL = process.env.EXPO_PUBLIC_YOUTUBE_BASE_URL ?? '';
 
 export const fetchVideos = async (
   pageParam: unknown,
-  maxResults: number = 5,
+  maxResults: number = 10,
 ): Promise<YouTubeResponse> => {
   try {
     const response = await axios.get(BASE_URL, {

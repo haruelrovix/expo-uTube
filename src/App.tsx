@@ -4,6 +4,10 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import VideoList from './screens/videos';
 import { StyleSheet } from 'react-native';
 
+if (__DEV__) {
+  require('./utils/Reactotron.config');
+}
+
 const queryClient = new QueryClient();
 
 export default function App() {

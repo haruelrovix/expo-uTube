@@ -1,14 +1,21 @@
 import React, { useMemo, useCallback } from 'react';
 import { FlatList, Platform, StyleSheet, useWindowDimensions, View } from 'react-native';
+import { FetchNextPageOptions, InfiniteQueryObserverResult } from 'react-query';
 
 import Header from '../Header';
 import ListFooterComponent from './ListFooterComponent';
 import VideoListItem, { VideoListItemProps } from './VideoListItem';
-import { useVideos } from '../../hooks/useVideos';
 import { calculateNumColumns } from '../../utils/layout';
+import { Video, YouTubeResponse } from '../../types/youtube';
 
-const VideoListContainer: React.FC = () => {
-  const { fetchNextPage, isFetchingNextPage, items, hasNextPage } = useVideos();
+interface VideoListContainerProps {
+  fetchNextPage: (options?: FetchNextPageOptions | undefined) => Promise<InfiniteQueryObserverResult<YouTubeResponse, unknown>>;
+  isFetchingNextPage: boolean;
+  items: Video[];
+  hasNextPage: boolean;
+}
+
+const VideoListContainer = ({ fetchNextPage, isFetchingNextPage, items, hasNextPage }: VideoListContainerProps) => {
   const { width } = useWindowDimensions();
 
   const calcNumColumns = useMemo(
