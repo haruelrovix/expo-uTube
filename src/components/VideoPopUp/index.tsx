@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Pressable, Image, StyleSheet } from 'react-native';
 
+import { Image, Pressable, StyleSheet } from 'react-native';
+
+import { Video } from '../../types/youtube';
+import VideoActionButtons from './VideoActionButtons';
 import VideoInfo from './VideoInfo';
 import VideoMenu from './VideoMenu';
-import VideoActionButtons from './VideoActionButtons';
-import { Video } from '../../types/youtube';
 
 interface VideoPopUpProps {
   video: Video;
@@ -77,10 +78,7 @@ const VideoPopUp = ({
           onShare={handleShare}
         />
 
-        <VideoActionButtons
-          onWatchLater={handleWatchLater}
-          onAddToQueue={handleAddToQueue}
-        />
+        <VideoActionButtons onWatchLater={handleWatchLater} onAddToQueue={handleAddToQueue} />
       </Pressable>
     </Pressable>
   );

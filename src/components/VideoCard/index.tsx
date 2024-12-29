@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+
 import { format } from 'date-fns';
 
 import { Video } from '../../types/youtube';
-import HoverInfo from './HoverInfo';
 import VideoPopUp from '../VideoPopUp';
 import VideoMenu from '../VideoPopUp/VideoMenu';
+import HoverInfo from './HoverInfo';
 
 interface VideoCardProps {
   video: Video;

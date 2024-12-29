@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { StyleSheet, Image } from 'react-native';
+
+import { Image, StyleSheet } from 'react-native';
 
 const Logo = () => {
-  return (
-    <Image style={styles.logo} source={require('../assets/snack-icon.png')} />
-  );
+  return <Image style={styles.logo} source={require('../assets/snack-icon.png')} />;
 };
 
 const styles = StyleSheet.create({

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Pressable, Text, StyleSheet } from 'react-native';
+
+import { Pressable, StyleSheet, Text } from 'react-native';
 
 interface HoverInfoProps {
   isInfoHovered: boolean;

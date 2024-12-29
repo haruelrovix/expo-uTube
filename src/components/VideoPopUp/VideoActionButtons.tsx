@@ -1,15 +1,13 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 interface VideoActionButtonsProps {
   onWatchLater: () => void;
   onAddToQueue: () => void;
 }
 
-const VideoActionButtons = ({
-  onWatchLater,
-  onAddToQueue,
-}: VideoActionButtonsProps) => (
+const VideoActionButtons = ({ onWatchLater, onAddToQueue }: VideoActionButtonsProps) => (
   <View style={styles.actionButtonsContainer}>
     <TouchableOpacity style={styles.actionButton} onPress={onWatchLater}>
       <Text style={styles.actionButtonIcon}>⏰</Text>

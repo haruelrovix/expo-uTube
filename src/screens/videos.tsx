@@ -6,21 +6,14 @@ import VideoListContainer from '../components/VideoList/VideoListContainer';
 import { useVideos } from '../hooks/useVideos';
 
 const VideoList = () => {
-  const { 
-    isLoading, 
-    isError, 
-    error, 
-    fetchNextPage, 
-    isFetchingNextPage, 
-    items, 
-    hasNextPage 
-  } = useVideos();
+  const { isLoading, isError, error, fetchNextPage, isFetchingNextPage, items, hasNextPage } =
+    useVideos();
 
   if (isLoading) return <LoadingState />;
   if (isError) return <ErrorState error={error} />;
 
   return (
-    <VideoListContainer 
+    <VideoListContainer
       fetchNextPage={fetchNextPage}
       isFetchingNextPage={isFetchingNextPage}
       items={items}

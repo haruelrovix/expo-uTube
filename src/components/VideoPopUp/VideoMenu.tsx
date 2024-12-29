@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 interface VideoMenuProps {
   isAvailable: boolean;
@@ -21,9 +22,7 @@ const VideoMenu = ({
   if (!isAvailable) return null;
 
   return (
-    <View
-      style={[styles.menuTriggerContainer, { top: isPopUp ? 260 : undefined }]}
-    >
+    <View style={[styles.menuTriggerContainer, { top: isPopUp ? 260 : undefined }]}>
       <TouchableOpacity style={styles.menuTrigger} onPress={onToggle}>
         <Text style={styles.threeDotMenu}>⋮</Text>
       </TouchableOpacity>

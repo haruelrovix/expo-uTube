@@ -1,21 +1,30 @@
-import React, { useMemo, useCallback } from 'react';
-import { FlatList, Platform, StyleSheet, useWindowDimensions, View } from 'react-native';
+import React, { useCallback, useMemo } from 'react';
+
+import { FlatList, Platform, StyleSheet, View, useWindowDimensions } from 'react-native';
+
 import { FetchNextPageOptions, InfiniteQueryObserverResult } from 'react-query';
 
+import { Video, YouTubeResponse } from '../../types/youtube';
+import { calculateNumColumns } from '../../utils/layout';
 import Header from '../Header';
 import ListFooterComponent from './ListFooterComponent';
 import VideoListItem, { VideoListItemProps } from './VideoListItem';
-import { calculateNumColumns } from '../../utils/layout';
-import { Video, YouTubeResponse } from '../../types/youtube';
 
 interface VideoListContainerProps {
-  fetchNextPage: (options?: FetchNextPageOptions | undefined) => Promise<InfiniteQueryObserverResult<YouTubeResponse, unknown>>;
+  fetchNextPage: (
+    options?: FetchNextPageOptions | undefined
+  ) => Promise<InfiniteQueryObserverResult<YouTubeResponse, unknown>>;
   isFetchingNextPage: boolean;
   items: Video[];
   hasNextPage: boolean;
 }
 
-const VideoListContainer = ({ fetchNextPage, isFetchingNextPage, items, hasNextPage }: VideoListContainerProps) => {
+const VideoListContainer = ({
+  fetchNextPage,
+  isFetchingNextPage,
+  items,
+  hasNextPage,
+}: VideoListContainerProps) => {
   const { width } = useWindowDimensions();
 
   const calcNumColumns = useMemo(
@@ -24,7 +33,7 @@ const VideoListContainer = ({ fetchNextPage, isFetchingNextPage, items, hasNextP
         width: styles.item.width,
         margin: styles.item.margin,
       }),
-    [width],
+    [width]
   );
 
   const handleEndReached = useCallback(() => {
@@ -45,9 +54,7 @@ const VideoListContainer = ({ fetchNextPage, isFetchingNextPage, items, hasNextP
         renderItem={renderItem}
         onEndReached={handleEndReached}
         onEndReachedThreshold={0.5}
-        ListFooterComponent={
-          <ListFooterComponent isLoading={isFetchingNextPage} />
-        }
+        ListFooterComponent={<ListFooterComponent isLoading={isFetchingNextPage} />}
         contentContainerStyle={styles.listContainer}
         keyExtractor={(item, index) => `${index}-${item.id.videoId}`}
         numColumns={calcNumColumns}

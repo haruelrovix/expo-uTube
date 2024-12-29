@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, ActivityIndicator, StyleSheet } from 'react-native';
+
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
 
 interface ListFooterComponentProps {
   isLoading: boolean;
@@ -10,11 +11,7 @@ const ListFooterComponent = ({ isLoading }: ListFooterComponentProps) => {
 
   return (
     <View style={styles.loadingFooter}>
-      <ActivityIndicator
-        size="large"
-        color="#333"
-        style={styles.loadingIndicator}
-      />
+      <ActivityIndicator size="large" color="#333" style={styles.loadingIndicator} />
     </View>
   );
 };

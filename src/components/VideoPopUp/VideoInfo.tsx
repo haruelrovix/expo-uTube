@@ -1,5 +1,7 @@
 import React from 'react';
-import { Text, StyleSheet, Pressable } from 'react-native';
+
+import { Pressable, StyleSheet, Text } from 'react-native';
+
 import { format } from 'date-fns';
 
 interface VideoInfoProps {
@@ -17,18 +19,12 @@ const VideoInfo = ({
   closeMenu,
   showHoverInfo,
 }: VideoInfoProps) => (
-  <Pressable
-    style={styles.infoContainer}
-    onPress={closeMenu}
-    onHoverIn={showHoverInfo}
-  >
+  <Pressable style={styles.infoContainer} onPress={closeMenu} onHoverIn={showHoverInfo}>
     <Text style={styles.title} numberOfLines={2}>
       {title}
     </Text>
     <Text style={styles.channel}>1 {channelTitle}</Text>
-    <Text style={styles.date}>
-      {format(new Date(publishedAt), 'MM/dd/yyyy')}
-    </Text>
+    <Text style={styles.date}>{format(new Date(publishedAt), 'MM/dd/yyyy')}</Text>
   </Pressable>
 );
 
