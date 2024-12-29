@@ -1,5 +1,5 @@
 import React, { useMemo, useCallback } from 'react';
-import { FlatList, StyleSheet, useWindowDimensions } from 'react-native';
+import { FlatList, StyleSheet, useWindowDimensions, View } from 'react-native';
 
 import Header from '../Header';
 import ListFooterComponent from './ListFooterComponent';
@@ -31,7 +31,7 @@ const VideoListContainer: React.FC = () => {
   );
 
   return (
-    <>
+    <View style={styles.container}>
       <Header />
       <FlatList
         data={items}
@@ -41,7 +41,7 @@ const VideoListContainer: React.FC = () => {
         ListFooterComponent={
           <ListFooterComponent isLoading={isFetchingNextPage} />
         }
-        contentContainerStyle={styles.container}
+        contentContainerStyle={styles.listContainer}
         keyExtractor={(item, index) => `${index}-${item.id.videoId}`}
         numColumns={calcNumColumns}
         initialNumToRender={3}
@@ -49,16 +49,18 @@ const VideoListContainer: React.FC = () => {
         windowSize={5}
         key={calcNumColumns}
       />
-    </>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 80,
     flex: 1,
     width: '100%',
-    alignItems: 'center',
+  },
+  listContainer: {
+    paddingTop: 20,
+    paddingHorizontal: 0,
   },
   item: {
     alignItems: 'center',
