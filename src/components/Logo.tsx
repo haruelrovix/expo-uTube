@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Image, StyleSheet } from 'react-native';
 
 const Logo = () => {
-  return <Image style={styles.logo} source={require('../assets/snack-icon.png')} />;
+  return <Image style={styles.logo} source={require('../public/assets/snack-icon.png')} />;
 };
 
 const styles = StyleSheet.create({
