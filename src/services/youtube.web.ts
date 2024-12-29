@@ -1,3 +1,4 @@
+import Tron from '../utils/Reactotron.config.web';
 import { BaseYouTubeService } from './youtube.base';
 
 export class YouTubeService extends BaseYouTubeService {
@@ -14,5 +15,12 @@ export class YouTubeService extends BaseYouTubeService {
     return YouTubeService.instance;
   }
 
-  protected initializeClient(): void {}
+  protected initializeClient(): void {
+    // Setup Reactotron monitoring specific to web
+    this.client.addMonitor((response) => {
+      if (response) {
+        Tron.apisauce(response);
+      }
+    });
+  }
 }

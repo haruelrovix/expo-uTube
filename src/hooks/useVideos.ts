@@ -1,7 +1,9 @@
 import { useInfiniteQuery } from 'react-query';
-import { fetchVideos } from '../services/youtube';
+import { YouTubeService } from '../services/youtube';
 
 export function useVideos() {
+  const service = YouTubeService.getInstance();
+
   const {
     data,
     fetchNextPage,
@@ -12,7 +14,7 @@ export function useVideos() {
     isFetchingNextPage,
   } = useInfiniteQuery(
     ['videos'],
-    ({ pageParam = undefined }) => fetchVideos(pageParam),
+    ({ pageParam = undefined }) => service.fetchVideos(pageParam),
     {
       getNextPageParam: (lastPage) => lastPage.nextPageToken || undefined,
       keepPreviousData: true,

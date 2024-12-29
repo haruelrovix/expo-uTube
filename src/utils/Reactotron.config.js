@@ -3,7 +3,6 @@ import Reactotron, {
   networking,
   openInEditor,
   trackGlobalErrors,
-  asyncStorage,
 } from 'reactotron-react-native';
 
 Reactotron
