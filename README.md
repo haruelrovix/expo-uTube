@@ -118,8 +118,8 @@ Project Artifacts
         <h3>Backend</h3>
         <p>Fetch YouTube video data with robust error handling and API key rotation</p>
       </div>
-      🔐 <a href="https://gist.github.com/haruelrovix/bad5320700530592c7fefdf367b8f39a#file-dummyyoutubedata-ts" target="_blank" rel="noopener noreferrer">Proxy Endpoint</a><br />
-      🌐 <a href="https://gist.github.com/haruelrovix/bad5320700530592c7fefdf367b8f39a#file-yt-controller-ts" target="_blank" rel="noopener noreferrer">Dummy YouTube Data</a>
+      🔐 <a href="https://gist.github.com/haruelrovix/bad5320700530592c7fefdf367b8f39a#file-yt-controller-ts" target="_blank" rel="noopener noreferrer">Proxy Endpoint</a>
+      🌐 <a href="https://gist.github.com/haruelrovix/bad5320700530592c7fefdf367b8f39a#file-dummyyoutubedata-ts" target="_blank" rel="noopener noreferrer">Dummy YouTube Data</a><br />
     </div>
   </div>
 </section>
