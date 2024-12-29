@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   listContainer: {
-    paddingTop: Platform.OS === 'web' ? 80 : 20,
+    paddingTop: Platform.OS === 'web' ? 80 : 30,
     paddingHorizontal: 0,
   },
   item: {

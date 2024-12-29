@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'flex-start',
     paddingHorizontal: 20,
-    paddingTop: 0,
+    paddingVertical: Platform.OS === 'web' ? 10 : 0,
     paddingBottom: 10,
     backgroundColor: Platform.OS === 'web' ? 'transparent' : '#FFF',
   },
