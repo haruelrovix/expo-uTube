@@ -17,10 +17,12 @@ export class YouTubeService extends BaseYouTubeService {
 
   protected initializeClient(): void {
     // Setup Reactotron monitoring specific to web
-    this.client.addMonitor((response) => {
-      if (response) {
-        Tron.apisauce(response);
-      }
-    });
+    if (__DEV__) {
+      this.client.addMonitor((response) => {
+        if (response) {
+          Tron.apisauce(response);
+        }
+      });
+    }
   }
 }
